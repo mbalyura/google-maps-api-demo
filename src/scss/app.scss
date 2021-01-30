@@ -1,0 +1,44 @@
+@import '_vars';
+@import '_reset';
+@import 'blocks/nav';
+@import 'blocks/customSelect';
+@import 'blocks/stores';
+@import 'blocks/spinner';
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Roboto'),
+    url('../fonts/Roboto-Regular.ttf');
+}
+
+.container {
+  font-family: 'Roboto', serif;
+  font-size: 16px;
+  line-height: 1.3em;
+
+  max-width: $desctop;
+  margin: auto;
+  padding: 10px 20px;
+  height: 100vh;
+
+  .content {
+    height: 100%;
+    background: $white;
+    border: solid 1px $gray;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+
+    .map {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

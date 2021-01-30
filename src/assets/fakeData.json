@@ -1,0 +1,115 @@
+{
+  "stores": [
+    {
+      "id": 1,
+      "region": "Киевская область",
+      "city": "Киев",
+      "name": "ТРЦ «Ocean Plaza»",
+      "address": "Ст. м. «Лыбедская», бульвар Дружбы Народов, 3-А",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–18:00",
+      "pickup": true
+    },
+    {
+      "id": 2,
+      "region": "Киевская область",
+      "city": "Киев",
+      "name": "Ст. м. «Минская»",
+      "address": "проспект Оболонский, 16",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "",
+      "pickup": false
+    },
+    {
+      "id": 3,
+      "region": "Киевская область",
+      "city": "Киев",
+      "name": "ТРЦ «Квадрат»",
+      "address": "бульвар Перова, 36",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–18:00",
+      "pickup": true
+    },
+    {
+      "id": 4,
+      "region": "Киевская область",
+      "city": "Киев",
+      "name": "ул. Берковецкая, 6Д",
+      "address": "ул. Берковецкая, 6Д",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–18:00",
+      "pickup": false
+    },
+    {
+      "id": 5,
+      "region": "Киевская область",
+      "city": "Васильков",
+      "name": "ТРЦ «Овал»" ,
+      "address": "ул. Грушевського, 10",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–24:00",
+      "working_hours_weekends": "Сб-Вс 10:00–11:00",
+      "pickup": false
+    },
+    {
+      "id": 6,
+      "region": "Киевская область",
+      "city": "Васильков",
+      "name": "ТРЦ «Круг»" ,
+      "address": "ул. Декабристов, 52",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–10:00",
+      "working_hours_weekends": "Сб-Вс 10:00–12:00",
+      "pickup": true
+    },
+    {
+      "id": 7,
+      "region": "Винницкая область",
+      "city": "Винница",
+      "name": "ТРЦ «Ромб»" ,
+      "address": "ул. Соборная, 19",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–10:00",
+      "working_hours_weekends": "Сб-Вс 10:00–12:00",
+      "pickup": true
+    },
+    {
+      "id": 8,
+      "region": "Винницкая область",
+      "city": "Жмеринка",
+      "name": "ТРЦ «Куб»" ,
+      "address": "ул. Центральная, 6",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "pickup": true
+    },
+    {
+      "id": 9,
+      "region": "Одесская область",
+      "city": "Одесса",
+      "name": "ТРЦ «Куб»" ,
+      "address": "ул. Центральная, 6",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "pickup": true
+    },
+    {
+      "id": 10,
+      "region": "Одесская область",
+      "city": "Измаил",
+      "name": "ТРЦ «Куб»" ,
+      "address": "ул. Центральная, 6",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "pickup": true
+    }
+
+  ]
+}
