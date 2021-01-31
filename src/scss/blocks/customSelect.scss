@@ -20,7 +20,7 @@
     border-radius: 5px;
     padding: 10px 14px 6px;
 
-    &:after {
+    &::after {
       position: absolute;
       content: '';
       width: 13px;
@@ -31,7 +31,6 @@
       border-left: solid 2px $black;
       transform: rotate(-45deg);
     }
-
   }
 
   .custom-options {
@@ -56,6 +55,7 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
+
     .custom-options {
       opacity: 1;
       visibility: visible;
@@ -73,6 +73,5 @@
       transition: all 0.5s;
       background-color: $gray;
     }
-
   }
 }

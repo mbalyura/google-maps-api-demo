@@ -1,16 +1,16 @@
 .search-field {
   color: $dark-gray;
+  font-size: 1em;
   border: none;
   outline: none;
   margin-top: 10px;
   padding-left: 25px;
   height: 50px;
   width: 100%;
-  background-image: url('../images/search.svg');
-  background-repeat: no-repeat;
-  background-position: 0 17px;
+  background: 0 17px url('../images/search.svg') no-repeat;
 
   &::placeholder {
+    font-size: 13px;
     text-transform: uppercase;
   }
 }
