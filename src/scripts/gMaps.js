@@ -4,43 +4,40 @@ const mapContainer = document.querySelector('.map');
 const defaultCoords = { lat: 50.4537865, lng: 30.5038465, zoom: 12 };
 let googleMaps;
 let map;
-let placeService;
+let geocoder;
 let marker;
 
 export const initialRenderGMaps = async (state, coords = defaultCoords) => {
-  const { lat, lng, zoom } = coords;
   state.isLoading = true;
+  const { lat, lng, zoom } = coords;
   googleMaps = await loadGoogleMapsApi({
+    // key: 'AIzaSyAYQTc2e1XUgfTFKbwnYhlymFx4treFAa8', // from video
     key: 'AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE', // work only from 127.0.0.1:8080 !!
-    // key: 'AIzaSyA9gszeIUDxXG1U0UqqkVE23qnluo4Bizw',
-    libraries: ['places'],
+    // key: 'AIzaSyCL6Qc_WOhBTqQhddmgbBYW2D4G5fkxe1c', // my key
   });
-  map = await new googleMaps.Map(mapContainer, {
+  map = new googleMaps.Map(mapContainer, {
     center: { lat, lng },
     zoom,
   });
-  placeService = await new googleMaps.places.PlacesService(map);
+  geocoder = new googleMaps.Geocoder();
   state.isLoading = false;
 };
 
 export const renderGMapMarker = async (state) => {
   state.isLoading = true;
-  const place = state.storesList.find((store) => store.id === state.activeStoreId);
-  const query = `${place.city} ${place.name}`;
-  const request = {
-    query,
-    fields: ['name', 'geometry'],
-  };
-
-  placeService.findPlaceFromQuery(request, (results, status) => {
-    if (status === googleMaps.places.PlacesServiceStatus.OK) {
+  const store = state.storesList.find((item) => item.id === state.activeStoreId);
+  const address = `${store.city} ${store.address}`;
+  geocoder.geocode({ address }, (results, status) => {
+    if (status === 'OK') {
       if (marker) marker.setMap(null);
       marker = new googleMaps.Marker({
         position: results[0].geometry.location,
         map,
       });
       map.setCenter(results[0].geometry.location);
-      state.isLoading = false;
+    } else {
+      console.error('Adsress not found!');
     }
+    state.isLoading = false;
   });
 };

@@ -38,14 +38,15 @@
     display: block;
     top: 100%;
     width: 100%;
-    opacity: 0;
     max-height: 50vh;
     // overflow: hidden;
     // overflow-y: scroll;
     border: solid 1px $gray;
     border-top: 0;
-    transition: all 0.5s;
+    opacity: 0;
     visibility: hidden;
+    transform: translate(0%);
+    transition: all 0.5s;
     pointer-events: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

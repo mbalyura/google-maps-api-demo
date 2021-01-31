@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint ./src --ext js",
-    "format": "eslint --fix src/*.js",
+    "format": "npx eslint --fix ./src --ext js",
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "rm -rf dist && cross-env NODE_ENV=production webpack",
     "deploy": "surge dist plant-table.surge.sh"
