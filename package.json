@@ -4,7 +4,7 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint ./src --ext js",
+    "lint": "npx eslint ./src --ext js && npx stylelint ./src/scss",
     "format": "npx eslint --fix ./src --ext js",
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "rm -rf dist && cross-env NODE_ENV=production webpack",
@@ -30,6 +30,8 @@
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.9.0",
+    "stylelint-config-standard": "^20.0.0",
     "webpack": "^5.18.0",
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.2"
