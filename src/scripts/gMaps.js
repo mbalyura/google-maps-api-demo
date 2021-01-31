@@ -2,6 +2,7 @@ import loadGoogleMapsApi from 'load-google-maps-api';
 
 const mapContainer = document.querySelector('.map');
 const defaultCoords = { lat: 50.4537865, lng: 30.5038465, zoom: 12 };
+
 let googleMaps;
 let map;
 let geocoder;
@@ -11,9 +12,7 @@ export const initialRenderGMaps = async (state, coords = defaultCoords) => {
   state.isLoading = true;
   const { lat, lng, zoom } = coords;
   googleMaps = await loadGoogleMapsApi({
-    // key: 'AIzaSyAYQTc2e1XUgfTFKbwnYhlymFx4treFAa8', // from video
-    key: 'AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE', // work only from 127.0.0.1:8080 !!
-    // key: 'AIzaSyCL6Qc_WOhBTqQhddmgbBYW2D4G5fkxe1c', // my key
+    key: 'AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE', // ! work only from 127.0.0.1:8080 !
   });
   map = new googleMaps.Map(mapContainer, {
     center: { lat, lng },
@@ -23,7 +22,22 @@ export const initialRenderGMaps = async (state, coords = defaultCoords) => {
   state.isLoading = false;
 };
 
-export const renderGMapMarker = async (state) => {
+export const positionMap = (state) => {
+  state.isLoading = true;
+  map.setZoom(12);
+  if (marker) marker.setMap(null);
+  const address = state.activeCity;
+  geocoder.geocode({ address }, (results, status) => {
+    if (status === 'OK') {
+      map.setCenter(results[0].geometry.location);
+    } else {
+      console.warn('Address not found!');
+    }
+    state.isLoading = false;
+  });
+};
+
+export const renderGMapMarker = (state) => {
   state.isLoading = true;
   const store = state.storesList.find((item) => item.id === state.activeStoreId);
   const address = `${store.city} ${store.address}`;
@@ -35,8 +49,9 @@ export const renderGMapMarker = async (state) => {
         map,
       });
       map.setCenter(results[0].geometry.location);
+      map.setZoom(16);
     } else {
-      console.error('Adsress not found!');
+      console.warn('Address not found!');
     }
     state.isLoading = false;
   });

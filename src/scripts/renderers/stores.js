@@ -1,38 +1,62 @@
 export default (state) => {
-  const { storesList, activeCity, searchString } = state;
+  const { storesList, activeCity, searchValue } = state;
 
   const storesContainer = document.querySelector('.stores');
   storesContainer.innerHTML = '';
 
   const currentStoresList = storesList
     .filter((store) => store.city === activeCity)
-    .filter(({ name, address }) => searchString.length === 0
-      || name.toLowerCase().includes(searchString)
-      || address.toLowerCase().includes(searchString));
+    .filter(({ name, address }) => searchValue.length === 0
+      || name.toLowerCase().includes(searchValue)
+      || address.toLowerCase().includes(searchValue));
 
-  const handleChoseStore = (store) => () => {
+  const handleChooseStore = (store) => () => {
     state.activeStoreId = store.id;
   };
 
   currentStoresList.forEach((store) => {
-    console.log('store', store);
     const divStore = document.createElement('div');
     divStore.classList.add('store');
 
+    if (state.activeStoreId === store.id) {
+      divStore.classList.add('store--active');
+    }
+
     const divName = document.createElement('div');
+    divName.classList.add('store__name');
     divName.innerHTML = store.name;
 
     const divAddress = document.createElement('div');
+    divAddress.classList.add('store__address');
     divAddress.innerHTML = store.address;
 
-    const divPickup = document.createElement('div');
-    divPickup.innerHTML = store.pickup ? 'самовывоз' : null;
+    divStore.append(divName, divAddress);
+
+    if (store.pickup) {
+      const divPickup = document.createElement('div');
+      divPickup.classList.add('store__pickup');
+      divPickup.innerHTML = 'Возможен самовывоз';
+      divStore.append(divPickup);
+    }
+
+    const divPhone = document.createElement('div');
+    divPhone.classList.add('store__phone');
+    divPhone.innerHTML = store.phone;
+    divStore.append(divPhone);
 
     const divHours = document.createElement('div');
+    divHours.classList.add('store__hours');
     divHours.innerHTML = store.working_hours_weekdays;
+    divStore.append(divHours);
 
-    divStore.append(divName, divAddress, divPickup, divHours);
-    divStore.addEventListener('click', handleChoseStore(store));
+    if (store.working_hours_weekends) {
+      const divHoursWeekends = document.createElement('div');
+      divHoursWeekends.classList.add('store__hours-weekends');
+      divHoursWeekends.innerHTML = store.working_hours_weekends;
+      divStore.append(divHoursWeekends);
+    }
+
+    divStore.addEventListener('click', handleChooseStore(store));
     storesContainer.append(divStore);
   });
 };

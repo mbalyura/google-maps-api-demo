@@ -1,0 +1,16 @@
+.search-field {
+  color: $dark-gray;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  padding-left: 25px;
+  height: 50px;
+  width: 100%;
+  background-image: url('../images/search.svg');
+  background-repeat: no-repeat;
+  background-position: 0 17px;
+
+  &::placeholder {
+    text-transform: uppercase;
+  }
+}

@@ -8,14 +8,14 @@
 }
 
 .spinner:after {
-  content: " ";
+  content: '';
   display: block;
   width: 64px;
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid rgb(255, 0, 0);
-  border-color: #fff transparent #fff transparent;
+  border: 6px solid $white;
+  border-color: $white transparent;
   animation: spinner 1.2s linear infinite;
 }
 

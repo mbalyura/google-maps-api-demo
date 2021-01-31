@@ -37,7 +37,7 @@
       "id": 4,
       "region": "Киевская область",
       "city": "Киев",
-      "name": "ул. Берковецкая, 6Д",
+      "name": "ТРЦ «Лавина»",
       "address": "ул. Берковецкая, 6Д",
       "phone": "044 284-50-80",
       "working_hours_weekdays": "Пн-Пт 09:00–20:00",
@@ -80,23 +80,23 @@
     {
       "id": 8,
       "region": "Винницкая область",
+      "city": "Винница",
+      "name": "ТРЦ «Октагон»" ,
+      "address": "ул. Академика Янгеля, 20",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–10:00",
+      "working_hours_weekends": "Сб-Вс 10:00–12:00",
+      "pickup": false
+    },
+    {
+      "id": 9,
+      "region": "Винницкая область",
       "city": "Жмеринка",
       "name": "ТРЦ «Куб»" ,
       "address": "ул. Центральная, 6",
       "phone": "044 284-50-80",
       "working_hours_weekdays": "Пн-Пт 09:00–20:00",
-      "working_hours_weekends": "Сб-Вс 10:00–22:00",
-      "pickup": true
-    },
-    {
-      "id": 9,
-      "region": "Одесская область",
-      "city": "Одесса",
-      "name": "ТРЦ «Куб»" ,
-      "address": "ул. Центральная, 6",
-      "phone": "044 284-50-80",
-      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
-      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "working_hours_weekends": "",
       "pickup": true
     },
     {
@@ -109,7 +109,39 @@
       "working_hours_weekdays": "Пн-Пт 09:00–20:00",
       "working_hours_weekends": "Сб-Вс 10:00–22:00",
       "pickup": true
+    },
+    {
+      "id": 11,
+      "region": "Одесская область",
+      "city": "Одесса",
+      "name": "ТРЦ «Шар»" ,
+      "address": "пр. Гагарина, 16/2",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "pickup": true
+    },
+    {
+      "id": 12,
+      "region": "Одесская область",
+      "city": "Одесса",
+      "name": "ТРЦ «Параллелограмм»" ,
+      "address": "ул. Шишкина, 10",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "pickup": false
+    },
+    {
+      "id": 13,
+      "region": "Одесская область",
+      "city": "Одесса",
+      "name": "ТРЦ «Треугольник»" ,
+      "address": "ул. Академическая, 28",
+      "phone": "044 284-50-80",
+      "working_hours_weekdays": "Пн-Пт 09:00–20:00",
+      "working_hours_weekends": "Сб-Вс 10:00–22:00",
+      "pickup": true
     }
-
   ]
 }

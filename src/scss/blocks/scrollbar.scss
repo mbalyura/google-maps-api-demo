@@ -1,0 +1,7 @@
+.simplebar-scrollbar {
+  height: 30% !important;
+
+  &:before {
+    background-color: $dark-gray;
+  }
+}

@@ -31,6 +31,7 @@
       border-left: solid 2px $black;
       transform: rotate(-45deg);
     }
+
   }
 
   .custom-options {
@@ -39,8 +40,6 @@
     top: 100%;
     width: 100%;
     max-height: 50vh;
-    // overflow: hidden;
-    // overflow-y: scroll;
     border: solid 1px $gray;
     border-top: 0;
     opacity: 0;
@@ -76,20 +75,4 @@
     }
 
   }
-}
-
-.search-field {
-  color: $dark-gray;
-  position: relative;
-  border: none;
-  outline: none;
-  margin-top: 10px;
-  padding-left: 25px;
-  height: 50px;
-  width: 100%;
-  text-transform: uppercase;
-  background-image: url('../images/search-i.svg');
-  background-repeat: no-repeat;
-  background-position: 0 17px;
-
 }

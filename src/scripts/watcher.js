@@ -1,23 +1,27 @@
 import onChange from 'on-change';
 
 import renderSpinner from './renderers/spinner';
-import renderCustomSelect from './renderers/customSelect';
+import { renderCustomSelect, toggleCustomSelect } from './renderers/customSelect';
 import renderStores from './renderers/stores';
-import { renderGMapMarker } from './gMaps';
+import { renderGMapMarker, positionMap } from './gMaps';
 
 export default (state) => {
   const watchedState = onChange(state, (path, value) => {
     switch (path) {
       case 'activeCity':
-        renderCustomSelect(watchedState, value);
+        renderCustomSelect(watchedState);
         renderStores(watchedState);
+        positionMap(watchedState);
         break;
       case 'activeStoreId':
+        renderStores(watchedState);
         renderGMapMarker(watchedState);
         break;
-      case 'searchString':
-        console.log('watchedState', watchedState);
+      case 'searchValue':
         renderStores(watchedState);
+        break;
+      case 'isSelectOpen':
+        toggleCustomSelect(value);
         break;
       case 'isLoading':
         renderSpinner(value);

@@ -1,4 +1,4 @@
-export default (state, active) => {
+export const renderCustomSelect = (state) => {
   const handleChangeCity = (city) => () => {
     state.activeCity = city;
   };
@@ -16,7 +16,7 @@ export default (state, active) => {
     divRegion.classList.add('region');
     divRegion.innerHTML = region;
 
-    if (city === active) {
+    if (city === state.activeCity) {
       customSelectTrigger.append(divCity, divRegion);
     } else {
       const customOption = document.createElement('div');
@@ -26,4 +26,13 @@ export default (state, active) => {
       customOptionsContainer.append(customOption);
     }
   });
+};
+
+export const toggleCustomSelect = (isSelectOpen) => {
+  const customSelect = document.querySelector('.custom-select');
+  if (isSelectOpen) {
+    customSelect.classList.add('open');
+  } else {
+    customSelect.classList.remove('open');
+  }
 };

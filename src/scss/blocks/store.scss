@@ -1,0 +1,65 @@
+.store {
+  padding: 20px;
+  cursor: pointer;
+
+  &__name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3em;
+  }
+
+  &__address {
+    margin-top: 2px;
+    font-size: 14px;
+  }
+
+  &__pickup {
+    margin-top: 4px;
+    font-size: 14px;
+    color: $green;
+  }
+
+  &__phone {
+    position: relative;
+    margin-top: 14px;
+    margin-left: 18px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 1px;
+      left: -18px;
+      width: 14px;
+      height: 14px;
+      background-size: 14px 14px;
+      background: url('../images/tel.svg') no-repeat;
+    }
+  }
+
+  &__hours {
+    position: relative;
+    margin-top: 8px;
+    margin-left: 18px;
+    font-size: 14px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 1px;
+      left: -18px;
+      width: 14px;
+      height: 14px;
+      background-size: 14px 14px;
+      background: url('../images/clock.svg') no-repeat;
+    }
+  }
+
+  &__hours-weekends {
+    margin-left: 18px;
+    font-size: 14px;
+  }
+
+  &:hover, &--active {
+    background: $light-gray;
+  }
+}
