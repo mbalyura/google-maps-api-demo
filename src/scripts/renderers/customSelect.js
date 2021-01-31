@@ -7,6 +7,7 @@ export const renderCustomSelect = (state) => {
   customOptionsContainer.innerHTML = '';
   const customSelectTrigger = document.querySelector('.custom-select__trigger');
   customSelectTrigger.innerHTML = '';
+  state.activeStoreId = null;
 
   state.citiesList.forEach(({ region, city }) => {
     const divCity = document.createElement('div');

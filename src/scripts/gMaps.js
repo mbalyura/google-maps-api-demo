@@ -11,21 +11,27 @@ let marker;
 export const initialRenderGMaps = async (state, coords = defaultCoords) => {
   state.isLoading = true;
   const { lat, lng, zoom } = coords;
+
   googleMaps = await loadGoogleMapsApi({
     key: 'AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE', // ! work only from 127.0.0.1:8080 !
   });
+
   map = new googleMaps.Map(mapContainer, {
     center: { lat, lng },
     zoom,
   });
+
   geocoder = new googleMaps.Geocoder();
+
   state.isLoading = false;
 };
 
 export const positionMap = (state) => {
   state.isLoading = true;
+
   map.setZoom(12);
   if (marker) marker.setMap(null);
+
   const address = state.activeCity;
   geocoder.geocode({ address }, (results, status) => {
     if (status === 'OK') {
@@ -39,8 +45,11 @@ export const positionMap = (state) => {
 
 export const renderGMapMarker = (state) => {
   state.isLoading = true;
-  const store = state.storesList.find((item) => item.id === state.activeStoreId);
-  const address = `${store.city} ${store.address}`;
+
+  const activeStore = state.storesList.find((store) => store.id === state.activeStoreId);
+  if (!activeStore) return;
+
+  const address = `${activeStore.city} ${activeStore.address}`;
   geocoder.geocode({ address }, (results, status) => {
     if (status === 'OK') {
       if (marker) marker.setMap(null);
