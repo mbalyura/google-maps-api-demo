@@ -4,6 +4,6 @@ import 'simplebar/dist/simplebar.css';
 import './scss/app.scss';
 import './images/favicon.png';
 
-import runApp from './init';
+import runApp from './scripts/init';
 
 runApp();
