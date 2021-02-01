@@ -31,12 +31,12 @@ export const renderCustomSelect = (state) => {
 
 export const toggleCustomSelect = (isSelectOpen) => {
   const customSelect = document.querySelector('.custom-select');
-  const nav = document.querySelector('.nav');
+  const backdrop = document.querySelector('.backdrop');
   if (isSelectOpen) {
     customSelect.classList.add('open');
-    nav.classList.add('shadow');
+    backdrop.style.opacity = 0.75;
   } else {
     customSelect.classList.remove('open');
-    nav.classList.remove('shadow');
+    backdrop.style.opacity = 0;
   }
 };
