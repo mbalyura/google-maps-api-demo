@@ -1,6 +1,7 @@
 .custom-select {
   position: relative;
   cursor: pointer;
+  z-index: 100;
 
   .city {
     font-size: 16px;
