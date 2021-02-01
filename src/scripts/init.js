@@ -1,8 +1,8 @@
-import fakeData from './assets/fakeData.json';
-import runWatcher from './scripts/watcher';
-import { initialRenderGMaps } from './scripts/gMaps';
-import { renderCustomSelect } from './scripts/renderers/customSelect';
-import renderStores from './scripts/renderers/stores';
+import fakeData from '../assets/fakeData.json';
+import runWatcher from './watcher';
+import { initialRenderGMaps } from './gMaps';
+import { renderCustomSelect } from './renderers/customSelect';
+import renderStores from './renderers/stores';
 
 const getCitiesList = (storesList) => storesList
   .reduce((acc, { region, city }) => (acc.some((item) => (item.city === city))
