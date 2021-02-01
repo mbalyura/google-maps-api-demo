@@ -1,6 +1,6 @@
 # Google Map API demo
 
-## ! geocoder-api used to searching addresses works only from dev-server !
+### geocoder-api used to searching addresses works only from localhost!
 
 ---
 
@@ -9,14 +9,16 @@
 ```
 $ npm i
 ```
-### 3. Run dev-server:
+### 2. Run dev-server:
 
 ```
 $ npm run dev
 ```
-### 4. Build project:
+### 3. Build project:
 
 ```
 $ npm run build
 ```
+
+### 4. Open dist/index.html in browser
 ---
