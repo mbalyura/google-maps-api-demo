@@ -31,9 +31,12 @@ export const renderCustomSelect = (state) => {
 
 export const toggleCustomSelect = (isSelectOpen) => {
   const customSelect = document.querySelector('.custom-select');
+  const nav = document.querySelector('.nav');
   if (isSelectOpen) {
     customSelect.classList.add('open');
+    nav.classList.add('shadow');
   } else {
     customSelect.classList.remove('open');
+    nav.classList.remove('shadow');
   }
 };

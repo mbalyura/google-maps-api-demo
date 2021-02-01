@@ -1,6 +1,6 @@
 .nav {
-  width: 45%;
   height: 100%;
+  width: 100%;
   background: white;
 
   &__header {
@@ -9,7 +9,15 @@
   }
 
   @media (max-width: $mobile) {
-    max-height: 50%;
     width: 100%;
+  }
+
+  &.shadow {
+    *,
+    *:hover {
+      transition: all 0.3s;
+      border-color: $dark-gray;
+      background-color: $dark-gray;
+    }
   }
 }
