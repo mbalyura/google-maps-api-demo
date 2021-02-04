@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="assets/images/favicon.png">
-  <title>Google Map Api demo</title>
-</head>
-<body>
-  <div class="container">
-    <main class="content">
-      <aside class="nav">
-        <div class="backdrop"></div>
-        <div class="nav__header">
-          <div class="custom-select">
-            <div class="custom-select__trigger">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <title>Google Map Api demo</title>
+  </head>
+  <body>
+    <div class="container">
+      <main class="content">
+        <aside class="nav">
+          <div class="backdrop"></div>
+          <div class="nav__header">
+            <div class="custom-select">
+              <div class="custom-select__trigger"></div>
+              <div class="custom-options"></div>
             </div>
-            <div class="custom-options" data-simplebar>
-            </div>
+            <input class="search-field" type="text" placeholder="поиск"/>
           </div>
-          <input class="search-field" type="text" placeholder="поиск">
-        </div>
-        <div class="stores" data-simplebar>
-        </div>
-      </aside>
-      <section class="map"></section>
-      <div class="spinner"></div>
-    </main>
+          <div class="stores"></div>
+        </aside>
+        <section class="map"></section>
+        <div class="spinner"></div>
+      </main>
     </div>
-</body>
+  </body>
 </html>

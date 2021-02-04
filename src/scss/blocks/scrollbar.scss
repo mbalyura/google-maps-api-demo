@@ -1,7 +1,14 @@
-.simplebar-scrollbar {
-  height: 30% !important;
+::-webkit-scrollbar {
+  width: 12px;
+  background: $white;
 
-  &::before {
-    background-color: $dark-gray;
+  &-thumb {
+    background: $gray;
+    border: 2px solid $white;
+    border-radius: 20px;
+
+    &:hover {
+      background: $dark-gray;
+    }
   }
 }
